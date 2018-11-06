@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+  width : 375px;
+  margin: 0 auto;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rightspace {
+  margin-left: 10px;
+}
+
+
+.stopwatch-timer {
+  font-size: 42px;
+  font-weight: 100;
+  line-height: 60px;
+  
+  margin: 0;
+  
+}
+
+.narrow{
+  margin-bottom: -10px;
+}
+
+.stopwatch-laps {
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.stopwatch-lap {
+  font-size: 20px;
+  line-height: 60px;
+  padding-right: 20px;
+  text-align: right;
+  border-bottom: 1px solid #d9dae0;
+}
+
+.data-table-box {
+  border:1px solid white;
+  width:150px;
+  height:200px;
+  padding-right: 20px;
+  padding-top: 8px;
+  text-align: right;
+  overflow:auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:20px;
+  line-height: 24px;
+}
+
+.centeredgrid{
+  justify-content: space-evenly;
+}
