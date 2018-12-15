@@ -3,6 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # CoffeeTawk
 CoffeeTawk is designed for coffee shops to collect data and figure out the correlation between how long it takes for a 
 baristas to make a beverage and the number of baristas.<br>
+<br>
 A timer is used to record the time for a customer to pick up beverages.
 
 ## Demo
