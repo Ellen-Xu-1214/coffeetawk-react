@@ -2,6 +2,7 @@
   text-align: center;
   width : 375px;
   margin: 0 auto;
+  border: 2px grey;
 }
 
 .App-logo {
@@ -79,4 +80,12 @@
 
 .centeredgrid{
   justify-content: space-evenly;
+}
+
+.halfWidth{
+  width: 80%;
+}
+
+.left{
+  float: left;
 }

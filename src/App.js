@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { Statistic, Header, Segment, Form, Grid, Divider, Button} from 'semantic-ui-react';
 import './App.css'
 
-import Stopwatch from './Components/Stopwatch';
 import Management from './Components/Management';
 
+// function for changing seconds to min:sec
 
 const formattedSeconds = (sec) =>
   Math.floor(sec / 60) +
     ':' +
   ('0' + sec % 60).slice(-2)
+
 
 class App extends Component {
     
@@ -31,12 +32,15 @@ class App extends Component {
 
     handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
+    //submit inputs
     handleSubmit = () => {
         const { baristas, beverage } = this.state
     
         this.setState({ Baristas: baristas, Beverage: beverage })
     }
 
+    // Push one element into the array of data collection
+    // Also clear the input and time display for next sample
     handleSave = e => {
       e.preventDefault();
 
@@ -55,12 +59,14 @@ class App extends Component {
       this.setState({time:0});
   }
 
+  // The following three funcitons are for stopwatch running
   handleStart = () => {
     this.timer = setInterval(() => {
       this.setState({time: ++this.state.time})
     }, 1000)
   }
 
+  // The end time is processed and pushed to the array of average pick-up time
   handleEnd = () => {
     clearInterval(this.timer);
     this.state.log.push(this.state.time / this.state.beverage);
@@ -79,6 +85,8 @@ class App extends Component {
         return (
         
         <div className='App'>
+
+        {/*Header for Data Collection*/}
             <Segment padded basic >
             <Header as='h1'>
                 <Statistic  value='1'/>
@@ -93,8 +101,9 @@ class App extends Component {
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group widths='equal'>
                     <Form.Field padded>
-                        <Header >Number of Baristas</Header>
-                        <Form.Input 
+                        <Header className='left'>Number of Baristas</Header>
+                        <Form.Input
+                        className='halfWidth'
                         icon='grey user'
                         name='baristas'
                         value={baristas}
@@ -102,9 +111,10 @@ class App extends Component {
                         />
                     </Form.Field>
                 
-                    <Form.Field padded>
-                        <Header>Quantity of Beverages</Header>
-                        <Form.Input  
+                    <Form.Field >
+                        <Header className='left'>Number of Beverages</Header>
+                        <Form.Input
+                        className='halfWidth'  
                         icon='grey coffee'
                         name='beverage'
                         value={beverage}
@@ -162,7 +172,7 @@ class App extends Component {
               <Management label="Number of Baristas:" values={this.state.records.baristas}/> 
             </Grid.Column>
             <Grid.Column width={7}>
-              <Management label="Average Pick-up Time(s):" values={this.state.log}/>
+              <Management label="Average Pick-up Time (sec):" values={this.state.log}/>
             </Grid.Column>
           </Grid>
 
