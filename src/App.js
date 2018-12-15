@@ -99,11 +99,10 @@ class App extends Component {
 
             <Segment basic>
             <Form onSubmit={this.handleSubmit}>
-                <Form.Group widths='equal'>
                     <Form.Field padded>
-                        <Header className='left'>Number of Baristas</Header>
+                        <Header>Number of Baristas</Header>
                         <Form.Input
-                        className='halfWidth'
+                        
                         icon='grey user'
                         name='baristas'
                         value={baristas}
@@ -112,16 +111,16 @@ class App extends Component {
                     </Form.Field>
                 
                     <Form.Field >
-                        <Header className='left'>Number of Beverages</Header>
+                        <Header >Number of Beverages</Header>
                         <Form.Input
-                        className='halfWidth'  
+                          
                         icon='grey coffee'
                         name='beverage'
                         value={beverage}
                         onChange={this.handleChange}
                         />
                     </Form.Field>
-                </Form.Group>
+
                 <Segment padded basic>
                     <Header size='medium'>
                     Record Pick-up Time
